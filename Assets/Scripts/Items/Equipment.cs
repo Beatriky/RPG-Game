@@ -8,7 +8,8 @@ public class Equipment : Item
     public int armorModifier;
     public int damageModifier;
     public EquipmentSlot equipSlot;
-
+    public SkinnedMeshRenderer mesh;
+    public EquipmentMeshRegion[] coveredMeshRegions;
 public override void Use(){
     base.Use();
     EquipmentManager.instance.Equip(this);  //equip the item remove it from the inventory
@@ -21,5 +22,6 @@ public override void Use(){
 
 
 public enum EquipmentSlot {Head, Chest, Legs, Weapon, Shield, Feet}
+public enum EquipmentMeshRegion { Legs, Arms, torso }; //body blend shape
 
 
